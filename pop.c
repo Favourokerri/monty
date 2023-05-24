@@ -1,5 +1,13 @@
 #include "monty.h"
 
+/**
+ * pop - removes the top element off the stack
+ * @stack: double pointer to the top of stack
+ * @line_number: line number of current instruction
+ *
+ * Return: void
+ */
+
 void pop(stack_t **stack, unsigned int line_number)
 {
 	stack_t *current = *stack;
