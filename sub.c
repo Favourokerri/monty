@@ -7,17 +7,20 @@
  *
  * Return: void
  */
+
 void sub(stack_t **stack, unsigned int line_number)
 {
 	int n = 0;
 
-	if (var.qs_len < 2)
+	if ((*stack)->next == NULL || (*stack)->next->next == NULL)
 	{
 		dprintf(STDERR_FILENO,
-			"L%u: can't add, stack too short\n",
+			"L%u: can't sub, stack too short\n",
 			line_number);
 		exit(EXIT_FAILURE);
 	}
-	n -= (*stack)->n;
+
+	n = (*stack)->next->next->n - (*stack)->next->n;
 	pop(stack, line_number);
+	(*stack)->next->n = n;
 }
