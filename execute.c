@@ -17,6 +17,7 @@ void execute(char *op, stack_t **stack, unsigned int line_num)
 		 {"push", push},
 		 {"pall", pall},
 		 {"pop", pop},
+		 {"swap", swap},
 		 {NULL, NULL}
 	 };
 
