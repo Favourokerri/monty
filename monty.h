@@ -72,7 +72,7 @@ stack_t *add_node(stack_t **stack, const int n);
 /* op codes */
 int check_digit(char *arg);
 void push(stack_t **stack, unsigned int line_number);
-
+void pall(stack_t **stack, unsigned int line_number);
 /* stream */
 void fs_close(int status, void *arg);
 #endif
