@@ -1,26 +1,28 @@
+#include <stdio.h>
+#include <ctype.h>
+#include <stdlib.h>
+#include <string.h>
 #include "monty.h"
 
 /**
- * sub - Subtract the top two elements of the stack.
- * @stack: Double pointer to the top of the stack.
- * @line_number: Script line number.
+ * sub -  substracts the first two nodes of the stack
+ * @stack: stack given by main
+ * @line_number: line counter
  *
  * Return: void
  */
 void sub(stack_t **stack, unsigned int line_number)
 {
-	stack_t *top, *second_top;
 	int result;
 
-	if (*stack == NULL || (*stack)->next == NULL)
+	if (!stack || !*stack || !((*stack)->next))
 	{
-		fprintf(stderr, "L%u: can't sub, stack too short\n", line_number);
+		fprintf(stderr, "L%d: can't sub, stack too short\n", line_number);
 		exit(EXIT_FAILURE);
+		return;
 	}
 
-	top = *stack;
-	second_top = top->next;
-	result = second_top->n - top->n;
+	result = ((*stack)->next->n) - ((*stack)->n);
 	pop(stack, line_number);
 	(*stack)->n = result;
 }
