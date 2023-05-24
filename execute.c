@@ -16,6 +16,7 @@ void execute(char *op, stack_t **stack, unsigned int line_num)
 	 instruction_t codes[] = {
 		 {"push", push},
 		 {"pall", pall},
+		 {"pint", pint},
 		 {"pop", pop},
 		 {"swap", swap},
 		 {NULL, NULL}
