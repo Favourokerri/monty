@@ -1,26 +1,6 @@
 #include "monty.h"
 
 /**
- * check_digit - checks that a string argument contains only digits
- * @arg: string to check
- *
- * Return: 0 if only digits, else 1
- */
-int check_digit(char *arg)
-{
-	int i;
-
-	for (i = 0; arg[i]; i++)
-	{
-		if (arg[i] == '-' && i == 0)
-			continue;
-		if (isdigit(arg[i]) == 0)
-			return (1);
-	}
-	return (0);
-}
-
-/**
  * push - push an integer element onto the stack
  * @stack: double pointer to the top of the stack
  * @line_number: script line number
