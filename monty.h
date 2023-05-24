@@ -56,5 +56,23 @@ typedef struct qs_s
 /* global struct to hold flag for queue and stack length */
 extern qs_t var;
 
+/* execute */
+void execute(char *op, stack_t **stack, unsigned int line_num);
 
+/* free */
+void free_stack(int status, void *arg);
+void free_line(int status, void *arg);
+
+/* stack */
+void stack(stack_t **stack, unsigned int line_num);
+
+/* QUEUE */
+stack_t *add_node(stack_t **stack, const int n);
+
+/* op codes */
+int check_digit(char *arg);
+void push(stack_t **stack, unsigned int line_number);
+
+/* stream */
+void fs_close(int status, void *arg);
 #endif
