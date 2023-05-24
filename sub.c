@@ -25,4 +25,6 @@ void sub(stack_t **stack, unsigned int line_number)
 	second_top->n -= top->n;
 
 	pop(stack, line_number);
+
+	second_top->prev = NULL;
 }
