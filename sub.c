@@ -10,6 +10,7 @@
 void sub(stack_t **stack, unsigned int line_number)
 {
 	stack_t *top, *second_top;
+	int result;
 
 	if (*stack == NULL || (*stack)->next == NULL)
 	{
@@ -19,9 +20,7 @@ void sub(stack_t **stack, unsigned int line_number)
 
 	top = *stack;
 	second_top = top->next;
-	second_top->n -= top->n;
-
+	result = second_top->n - top->n;
 	pop(stack, line_number);
-	(*stack)->n = second_top;
+	(*stack)->n = result;
 }
-
