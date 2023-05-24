@@ -10,6 +10,8 @@ void sub(stack_t **stack, unsigned int line_number)
 {
 	stack_t *top, *second_top;
 
+	int n = 0;
+
 	if (var.qs_len < 2)
 	{
 		fprintf(stderr,
